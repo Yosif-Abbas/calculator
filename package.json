@@ -1,0 +1,22 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "a calculator",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx parcel index.html"
+  },
+  "keywords": [
+    "calculator"
+  ],
+  "author": "Yosif Abbas",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.58.3"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.3",
+    "browser-sync": "^2.27.5",
+    "parcel": "^2.8.3"
+  }
+}
