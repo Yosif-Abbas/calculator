@@ -68,7 +68,7 @@ body {
   height: 30px;
   border-radius: 6px;
   font-family: Orbitron, sans-serif;
-  transition: all .1s;
+  transition: all 50ms;
   transform: skew(3deg, 1deg);
 }
 
