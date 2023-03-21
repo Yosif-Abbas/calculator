@@ -595,6 +595,7 @@ class Calculator {
                 that._displayResult(that._result);
             }
             that._clearDisplay();
+            that._curOperation = undefined;
         });
         this._answer.addEventListener("click", function() {
             if (that._lastAnswer) that._displayInputSec.textContent += that._lastAnswer;
