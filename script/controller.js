@@ -37,9 +37,9 @@ class Calculator {
       if (!btn) return;
       that._handleOperation(that._curOperation);
       that._curOperation = btn.dataset.operation;
-      // if (that._result === 0 && (that._lastAnswer || that._lastAnswer === 0)) {
-      //   that._result = that._lastAnswer;
-      // }
+      if (that._result === '' && (that._lastAnswer || that._lastAnswer === 0)) {
+        that._result = that._lastAnswer;
+      }
       that._displayResult(that._result);
       that._clearDisplay();
     });
@@ -84,7 +84,7 @@ class Calculator {
   }
 
   _handleOperation(operation) {
-    const number = +this._displayInputSec.textContent;
+    const number = this._displayInputSec.textContent;
     if (operation === '/') this._result = this._divide(this._result, number);
     else if (operation === '*')
       this._result = this._Multiply(this._result, number);
@@ -97,21 +97,21 @@ class Calculator {
   _divide(num1, num2) {
     if (!num1 && num1 !== 0) return num2;
     if (!num2 && num2 !== 0) return num1;
-    return num1 / num2;
+    return +num1 / +num2;
   }
 
   _Multiply(num1, num2) {
-    return num1 * num2;
+    return +num1 * +num2;
   }
 
   _add(num1, num2) {
-    return num1 + num2;
+    return +num1 + +num2;
   }
 
   _subtract(num1, num2) {
     if (!num1 && num1 !== 0) return num2;
     if (!num2 && num2 !== 0) return num1;
-    return num1 - num2;
+    return +num1 - +num2;
   }
 
   _displayResult(result) {
