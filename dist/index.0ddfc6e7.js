@@ -584,7 +584,9 @@ class Calculator {
             if (!btn) return;
             that._handleOperation(that._curOperation);
             that._curOperation = btn.dataset.operation;
-            if (that._result === 0 && (that._lastAnswer || that._lastAnswer === 0)) that._result = that._lastAnswer;
+            // if (that._result === 0 && (that._lastAnswer || that._lastAnswer === 0)) {
+            //   that._result = that._lastAnswer;
+            // }
             that._displayResult(that._result);
             that._clearDisplay();
         });
@@ -596,6 +598,7 @@ class Calculator {
             }
             that._clearDisplay();
             that._curOperation = undefined;
+            that._result = undefined;
         });
         this._answer.addEventListener("click", function() {
             if (that._lastAnswer) that._displayInputSec.textContent += that._lastAnswer;
